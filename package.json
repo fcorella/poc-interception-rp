@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "name": "relying-party-of-replication-demo",
+  "version": "1.0.0",
+  "description": "Relying party of the Automated Credential Replication Demo",
+  "main": "demo.mjs",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3"
+  }
+}

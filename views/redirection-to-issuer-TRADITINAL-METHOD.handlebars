@@ -1,0 +1,26 @@
+<script type="module">
+
+function post(url, params) {
+    const form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", url);
+    for(let key in params) {
+        if(params.hasOwnProperty(key)) {
+            const hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+    }
+    document.body.appendChild(form);
+    // form.submit();
+    window.onload = function () { form.submit(); }; // to bypass the Firefox bug
+}
+
+post ("http://localhost:3200/presentation-request", {
+    challenge: "{{challenge}}",
+    callbackURL: "{{callbackURL}}"
+});
+
+</script>
