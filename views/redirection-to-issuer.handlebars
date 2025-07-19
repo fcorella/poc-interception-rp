@@ -18,7 +18,7 @@ function post(url, params) {
     window.onload = function () { form.submit(); }; // to bypass the Firefox bug
 }
 
-post ("http://192.249.126.189/presentation-request", {
+post ("https://poc-interception-ci/presentation-request", {
     challenge: "{{challenge}}",
     callbackURL: "{{callbackURL}}"
 });

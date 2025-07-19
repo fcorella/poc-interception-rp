@@ -15,12 +15,13 @@ console.log("listening on port 3000");
 app.use(express.static('static'));
 
 app.get('/', (req, res) => {
+    console.log("get / received");
     res.redirect(303, "/login-page.html");
 });
 
 app.get('/login-request', (req, res) => {
     const challenge = "should-be-random";
-    const callbackURL = "http:/192.249.127.29/presentation-response";
+    const callbackURL = "https:/poc-interception-rp.pomcor.com/presentation-response";
     res.render("redirection-to-issuer.handlebars", {
         challenge: challenge,
 	callbackURL: callbackURL
